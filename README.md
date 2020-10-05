@@ -1,7 +1,7 @@
 Water-Meter-Monitor
 ===================
 ## Overview
-This is a program developed in **Python** using **Opencv** and **Numpy**. It can take a snapshot of a water meter and read the value indicated by the arm of the odometer.
+This is a program developed in **Python** using **OpenCV** and **Numpy**. It can take a snapshot of a water meter and read the value indicated by the arm of the odometer.
 
 ## Development
 A sample picture of the water meter is taken, with the hundredths reading indicated by the red arm of the odometer. 
@@ -13,6 +13,8 @@ Then, three points (in red) pinpointing the center, the y-axis, and the x-axis a
 ![Three points plotted](https://github.com/Tom2096/Water-Meter-Monitor/blob/main/Imgs/Figure_2.png)
 
 The vertices of the box bounding the odometer is then created by adding and subtracting the length of the x-axis and y-axis. 
+
+![clip bounding box](https://github.com/Tom2096/Water-Meter-Monitor/blob/main/Imgs/bbx.png)
 
 Then, the picture is read and converted into HSV color format to filter out the red arm of the odometer. 
 
