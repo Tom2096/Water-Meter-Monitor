@@ -24,7 +24,7 @@ The image is then denoised by first eroding to rid the image of outlying pixels,
 
 The eigenvalues and right eigenvectors are then computed to determine the direction of the arm
 
-The eigenvector corrosponding with the largest eigenvalue is then projected onto the x and y axies, which can be calculated to give the angle of rotation and the odometer reading.   
+The eigenvector corresponding  with the largest eigenvalue is then projected onto the x and y axis, which can be calculated to give the angle of rotation and the odometer reading.   
 ![Denoised Image](https://github.com/Tom2096/Water-Meter-Monitor/blob/main/Imgs/Figure_5.png)
 
 
