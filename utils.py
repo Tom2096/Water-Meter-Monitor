@@ -41,7 +41,7 @@ def setBoundingBox(frame, conf):
 def filterAndDenoise(bbx):
     hsv_bbx = cv2.cvtColor(bbx, cv2.COLOR_BGR2HSV)
 
-    lower_green = np.array([70, 50, 50])                                    #Question here
+    lower_green = np.array([70, 50, 50])                                    
     upper_green = np.array([90, 255, 255])
     green_mask = cv2.inRange(hsv_bbx, lower_green, upper_green)
 
