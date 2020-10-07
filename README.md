@@ -29,5 +29,6 @@ The eigenvalues and right eigenvectors are then computed to determine the direct
 The eigenvector corresponding  with the largest eigenvalue is then projected onto the x and y axis, which can be calculated to give the angle of rotation and the odometer reading.   
 ![Denoised Image](https://github.com/Tom2096/Water-Meter-Monitor/blob/main/Imgs/Figure_5.png)
 
-
+Overall setup:
+![Denoised Image](https://github.com/Tom2096/Water-Meter-Monitor/blob/main/Imgs/setup.jpg)
 
