@@ -40,17 +40,23 @@ def setBoundingBox(frame, conf):
 
 def filterAndDenoise(bbx):
     hsv_bbx = cv2.cvtColor(bbx, cv2.COLOR_BGR2HSV)
+    
+    lower_red = np.array([0,50,50])
+    upper_red = np.array([10,255,255])
+    mask_0 = cv2.inRange(hsv_bbx, lower_red, upper_red) 
+    
+    lower_red = np.array([170,50,50])
+    upper_red = np.array([180,255,255])
+    mask_1 = cv2.inRange(hsv_bbx, lower_red, upper_red)
 
-    lower_green = np.array([70, 50, 50])                                    
-    upper_green = np.array([90, 255, 255])
-    green_mask = cv2.inRange(hsv_bbx, lower_green, upper_green)
+    red_mask = mask_0+mask_1
 
     kernel = np.ones((3, 3), np.uint8)
-    green_mask = cv2.erode(green_mask, kernel, iterations=1)
-    green_mask = cv2.dilate(green_mask, kernel, iterations=3)
-    green_mask = cv2.erode(green_mask, kernel, iterations=2)
+    green_mask = cv2.erode(red_mask, kernel, iterations=1)
+    green_mask = cv2.dilate(red_mask, kernel, iterations=3)
+    green_mask = cv2.erode(red_mask, kernel, iterations=2)
     
-    return green_mask
+    return red_mask
 
 def findPrincipalAxis(mask):
     cords = mask.nonzero()[::-1]
