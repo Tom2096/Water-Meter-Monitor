@@ -52,9 +52,9 @@ def filterAndDenoise(bbx):
     red_mask = mask_0+mask_1
 
     kernel = np.ones((3, 3), np.uint8)
-    green_mask = cv2.erode(red_mask, kernel, iterations=1)
-    green_mask = cv2.dilate(red_mask, kernel, iterations=3)
-    green_mask = cv2.erode(red_mask, kernel, iterations=2)
+    red_mask = cv2.erode(red_mask, kernel, iterations=1)
+    red_mask = cv2.dilate(red_mask, kernel, iterations=3)
+    red_mask = cv2.erode(red_mask, kernel, iterations=2)
     
     return red_mask
 
